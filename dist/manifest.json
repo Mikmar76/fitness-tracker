@@ -1,0 +1,12 @@
+{
+  "name": "FitTrack — Фитнес-трекер",
+  "short_name": "FitTrack",
+  "description": "Твой личный фитнес-трекер: тренировки, питание, прогресс",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f13",
+  "theme_color": "#0f0f13",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
