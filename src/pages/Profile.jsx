@@ -14,7 +14,7 @@ export default function Profile() {
   const [form, setForm] = useState({ ...user })
   const [weightInput, setWeightInput] = useState('')
   const [weightLog] = useState(getWeightLog)
-  const [notifEnabled, setNotifEnabled] = useState(Notification.permission === 'granted')
+  const [notifEnabled, setNotifEnabled] = useState(typeof Notification !== 'undefined' && Notification.permission === 'granted')
 
   const achievements = getAchievementsDef()
   const unlocked = getUnlocked()
@@ -42,6 +42,7 @@ export default function Profile() {
   }
 
   const requestNotif = async () => {
+    if (typeof Notification === 'undefined') return
     const perm = await Notification.requestPermission()
     setNotifEnabled(perm === 'granted')
     if (perm === 'granted') {
